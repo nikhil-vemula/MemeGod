@@ -28,4 +28,4 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
-          args: A new PR is raised -> ${{ github.event.path }}
+          args: A new PR is raised [View all pull requests](https://github.com/nikhil-vemula/MemeGod/pulls)
