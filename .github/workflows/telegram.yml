@@ -24,7 +24,7 @@ jobs:
 
       # Runs a single command using the runners shell
       - name: Telegram Notify
-        uses: appleboy/telegram-action@0.0.3
+        uses: appleboy/telegram-action@0.0.8
         with:
           debug: true
           to: ${{ secrets.TELEGRAM_TO }}
