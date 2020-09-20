@@ -26,7 +26,6 @@ jobs:
       - name: Telegram Notify
         uses: appleboy/telegram-action@master
         with:
-          debug: true
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
-          args: The ${{ github.event_name }} event triggered first step.
+          args: A new PR is raised -> ${{ github.event.path }}
