@@ -28,5 +28,6 @@ jobs:
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
+          format: markdown
           message: |
             A new PR is raised [View all PR's](https://github.com/nikhil-vemula/MemeGod/pulls)
