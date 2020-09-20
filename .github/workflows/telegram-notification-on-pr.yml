@@ -1,9 +1,8 @@
 # This is a basic workflow to help you get started with Actions
 
-name: CI
+name: Telegram notification
 
-# Controls when the action will run. Triggers the workflow on push or pull request
-# events but only for the master branch
+# Controls when the action will run. Triggers the workflow on pull request
 on:
   pull_request:
     branches: [ develop ]
@@ -20,7 +19,7 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v2
 
-      # Runs a single command using the runners shell
+      # Runs the telegram notify action to send a notification
       - name: Telegram Notify
         uses: appleboy/telegram-action@master
         with:
@@ -28,4 +27,4 @@ jobs:
           token: ${{ secrets.TELEGRAM_TOKEN }}
           format: markdown
           message: |
-            A new PR is raised [View all PR's](https://github.com/nikhil-vemula/MemeGod/pulls)
+            A new PR is raised [View all PR's](https://github.com/<user>/<repo>/pulls)
