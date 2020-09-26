@@ -41,11 +41,10 @@ function SideNav(props: Props) {
 
     const { window } = props;
     const classes = useStyles();
-    const theme = useTheme();
     const [mobileOpen, setMobileOpen] = React.useState(false);
     const container = window !== undefined ? () => window().document.body : undefined;
 
-    const [navItems, setNavItems] = useState([
+    const [navItems, _setNavItems] = useState([
         {
             'title': "Feed",
             'icon': <DynamicFeedIcon />

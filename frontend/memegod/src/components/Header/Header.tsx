@@ -5,7 +5,6 @@ import Toolbar from "@material-ui/core/Toolbar/Toolbar";
 import Typography from "@material-ui/core/Typography/Typography";
 import SearchIcon from "@material-ui/icons/Search";
 import { fade, InputBase, makeStyles } from "@material-ui/core";
-import constants from '../../config/constants'
 
 const useStyles = makeStyles((theme) => ({
     root: {
@@ -20,17 +19,15 @@ const useStyles = makeStyles((theme) => ({
         flexGrow: 1,
     },
     search: {
-        flexGrow: 2,
+        flexGrow: 1,
         position: 'relative',
         borderRadius: theme.shape.borderRadius,
         backgroundColor: fade(theme.palette.common.white, 0.15),
         '&:hover': {
             backgroundColor: fade(theme.palette.common.white, 0.25),
         },
-        width: 'auto',
         [theme.breakpoints.up('sm')]: {
             marginLeft: theme.spacing(1),
-            width: 'auto',
         },
     },
     searchIcon: {
@@ -49,14 +46,13 @@ const useStyles = makeStyles((theme) => ({
     inputInput: {
         flexGrow: 2,
         padding: theme.spacing(1, 1, 1, 0),
-        // vertical padding + font size from searchIcon
         paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
         transition: theme.transitions.create('width'),
         width: '100%',
         [theme.breakpoints.up('sm')]: {
-            width: '12ch',
+            width: '10ch',
             '&:focus': {
-                width: '20ch',
+                width: '12ch',
             },
         },
     },

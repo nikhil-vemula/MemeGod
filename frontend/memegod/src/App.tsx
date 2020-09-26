@@ -1,4 +1,4 @@
-import { createMuiTheme, MuiThemeProvider, ThemeProvider } from '@material-ui/core';
+import { createMuiTheme, ThemeProvider } from '@material-ui/core';
 import React, { useState } from 'react';
 import './App.css';
 import Header from './components/Header/Header';
