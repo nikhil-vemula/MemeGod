@@ -8,7 +8,7 @@ A fun learning side project to developer software skills.
 
 * We work on `develop` branch.
 * We have `frontend` folder, where all the UI related stuff is placed.
-* We have `backedn` folder, where all the backend server is stored.
+* We have `backend` folder, where all the backend server is stored.
 
 ### Review
 
