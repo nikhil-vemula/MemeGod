@@ -10,8 +10,8 @@ const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
     },
-    menuButton: {
-        marginRight: theme.spacing(2),
+    appBar: {
+        zIndex: theme.zIndex.drawer + 1,
     },
     title: {
         flexGrow: 1,
@@ -21,13 +21,13 @@ const useStyles = makeStyles((theme) => ({
         },
     },
     search: {
+        flexGrow: 2,
         position: 'relative',
         borderRadius: theme.shape.borderRadius,
         backgroundColor: fade(theme.palette.common.white, 0.15),
         '&:hover': {
             backgroundColor: fade(theme.palette.common.white, 0.25),
         },
-        marginLeft: 0,
         width: '100%',
         [theme.breakpoints.up('sm')]: {
             marginLeft: theme.spacing(1),
@@ -44,9 +44,11 @@ const useStyles = makeStyles((theme) => ({
         justifyContent: 'center',
     },
     inputRoot: {
+        width: '100%',
         color: 'inherit',
     },
     inputInput: {
+        flexGrow: 2,
         padding: theme.spacing(1, 1, 1, 0),
         // vertical padding + font size from searchIcon
         paddingLeft: `calc(1em + ${theme.spacing(4)}px)`,
@@ -59,6 +61,9 @@ const useStyles = makeStyles((theme) => ({
             },
         },
     },
+    right: {
+        flexGrow: 1
+    }
 }));
 
 
@@ -69,7 +74,7 @@ function Header() {
 
     return (
         <div className={classes.root} >
-            <AppBar position="static">
+            <AppBar position="fixed" className={classes.appBar} >
                 <Toolbar>
                     <Typography className={classes.title} variant="h6" noWrap>MemeGod</Typography>
                     <div className={classes.search}>
@@ -85,6 +90,7 @@ function Header() {
                             inputProps={{ 'aria-label': 'search' }}
                         />
                     </div>
+                    <div className={classes.right} />
                 </Toolbar>
             </AppBar>
         </div>

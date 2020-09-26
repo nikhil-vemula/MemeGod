@@ -1,9 +1,30 @@
+import { makeStyles, Toolbar } from '@material-ui/core';
 import React from 'react'
+import Feed from '../../components/Feed/Feed'
+import SideNav from '../../components/SideNav/SideNav'
 
-function Home(){
+const useStyles = makeStyles((theme) => ({
+    root: {
+        display: 'flex',
+    },
+    content: {
+        flexGrow: 1,
+        padding: theme.spacing(3)
+    },
+}));
+
+
+function Home() {
+
+    let classes = useStyles()
+
     return (
-        <div>
-            Home
+        <div className={classes.root} >
+            <SideNav />
+            <div className={classes.content} >
+                <Toolbar />
+                <Feed />
+            </div>
         </div>
     )
 }

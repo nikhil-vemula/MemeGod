@@ -6,8 +6,8 @@ import Home from './views/Home/Home';
 function App() {
   return (
     <div>
-      <Header/>
-      <Home/>
+      <Header />
+      <Home />
     </div>
   );
 }
