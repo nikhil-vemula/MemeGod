@@ -1,5 +1,5 @@
-import { makeStyles, Toolbar } from '@material-ui/core';
-import React from 'react'
+import { Button, makeStyles, Toolbar } from '@material-ui/core';
+import React, { useState } from 'react'
 import Feed from '../../components/Feed/Feed'
 import SideNav from '../../components/SideNav/SideNav'
 
@@ -13,17 +13,21 @@ const useStyles = makeStyles((theme) => ({
     },
 }));
 
-
 function Home() {
 
     let classes = useStyles()
 
+    let [isOpen, setIsOpen] = useState(false)
+
     return (
         <div className={classes.root} >
-            <SideNav />
+            <SideNav isOpen={isOpen} setIsOpen={setIsOpen} />
             <div className={classes.content} >
                 <Toolbar />
                 <Feed />
+                <Button variant="contained" color="primary" onClick={() => { setIsOpen(!isOpen) }} >
+                    Primary
+                </Button>
             </div>
         </div>
     )

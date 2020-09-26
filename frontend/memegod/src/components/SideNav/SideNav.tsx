@@ -16,6 +16,7 @@ import DynamicFeedIcon from '@material-ui/icons/DynamicFeed'
 import InfoIcon from '@material-ui/icons/Info'
 
 import constants from '../../config/constants'
+import { AnyPtrRecord } from 'dns'
 
 
 const useStyles = makeStyles((theme) => ({
@@ -35,13 +36,14 @@ const useStyles = makeStyles((theme) => ({
 
 interface Props {
     window?: () => Window
+    isOpen: boolean
+    setIsOpen: any
 }
 
 function SideNav(props: Props) {
 
     const { window } = props;
     const classes = useStyles();
-    const [mobileOpen, setMobileOpen] = React.useState(false);
     const container = window !== undefined ? () => window().document.body : undefined;
 
     const [navItems, _setNavItems] = useState([
@@ -75,7 +77,7 @@ function SideNav(props: Props) {
     )
 
     const handleDrawerToggle = () => {
-        setMobileOpen(!mobileOpen);
+        props.setIsOpen(!props.isOpen);
     };
 
     return (
@@ -87,7 +89,7 @@ function SideNav(props: Props) {
                     <Drawer
                         container={container}
                         variant="temporary"
-                        open={mobileOpen}
+                        open={props.isOpen}
                         onClose={handleDrawerToggle}
                         classes={{
                             paper: classes.drawerPaper,
