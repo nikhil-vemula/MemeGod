@@ -13,16 +13,11 @@ const useStyles = makeStyles((theme) => ({
     },
     appBar: {
         [theme.breakpoints.up('sm')]: {
-            marginLeft: constants.drawerWidth,
             zIndex: theme.zIndex.drawer + 1,
         },
     },
     title: {
         flexGrow: 1,
-        display: 'none',
-        [theme.breakpoints.up('sm')]: {
-            display: 'block',
-        },
     },
     search: {
         flexGrow: 2,
@@ -32,7 +27,7 @@ const useStyles = makeStyles((theme) => ({
         '&:hover': {
             backgroundColor: fade(theme.palette.common.white, 0.25),
         },
-        width: '100%',
+        width: 'auto',
         [theme.breakpoints.up('sm')]: {
             marginLeft: theme.spacing(1),
             width: 'auto',
