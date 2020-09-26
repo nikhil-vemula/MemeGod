@@ -5,13 +5,17 @@ import Toolbar from "@material-ui/core/Toolbar/Toolbar";
 import Typography from "@material-ui/core/Typography/Typography";
 import SearchIcon from "@material-ui/icons/Search";
 import { fade, InputBase, makeStyles } from "@material-ui/core";
+import constants from '../../config/constants'
 
 const useStyles = makeStyles((theme) => ({
     root: {
         flexGrow: 1,
     },
     appBar: {
-        zIndex: theme.zIndex.drawer + 1,
+        [theme.breakpoints.up('sm')]: {
+            marginLeft: constants.drawerWidth,
+            zIndex: theme.zIndex.drawer + 1,
+        },
     },
     title: {
         flexGrow: 1,
