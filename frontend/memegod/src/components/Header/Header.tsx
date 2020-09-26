@@ -90,7 +90,9 @@ function Header() {
                             inputProps={{ 'aria-label': 'search' }}
                         />
                     </div>
-                    <div className={classes.right} />
+                    <div className={classes.right}>
+
+                    </div>
                 </Toolbar>
             </AppBar>
         </div>
