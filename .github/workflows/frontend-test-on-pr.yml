@@ -23,10 +23,10 @@ jobs:
         with:
           node-version: ${{ matrix.node-version }}
 
-      - name: npm ci
+      - name: npm i
         working-directory: ./frontend/memegod
-        run: npm ci
+        run: npm i
 
-      - name: npm ci
+      - name: npm test
         working-directory: ./frontend/memegod
         run: npm test
