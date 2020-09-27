@@ -17,17 +17,12 @@ function Home() {
 
     let classes = useStyles()
 
-    let [isOpen, setIsOpen] = useState(false)
-
     return (
         <div className={classes.root} >
-            <SideNav isOpen={isOpen} setIsOpen={setIsOpen} />
+            <SideNav/>
             <div className={classes.content} >
                 <Toolbar />
                 <Feed />
-                <Button variant="contained" color="primary" onClick={() => { setIsOpen(!isOpen) }} >
-                    Primary
-                </Button>
             </div>
         </div>
     )

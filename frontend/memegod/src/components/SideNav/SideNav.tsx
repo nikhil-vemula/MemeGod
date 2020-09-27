@@ -36,14 +36,13 @@ const useStyles = makeStyles((theme) => ({
 
 interface Props {
     window?: () => Window
-    isOpen: boolean
-    setIsOpen: any
 }
 
 function SideNav(props: Props) {
 
     const { window } = props;
     const classes = useStyles();
+    const [isOpen, setIsOpen] = useState(true)
     const container = window !== undefined ? () => window().document.body : undefined;
 
     const [navItems, _setNavItems] = useState([
@@ -77,7 +76,7 @@ function SideNav(props: Props) {
     )
 
     const handleDrawerToggle = () => {
-        props.setIsOpen(!props.isOpen);
+        setIsOpen(!isOpen);
     };
 
     return (
@@ -89,7 +88,7 @@ function SideNav(props: Props) {
                     <Drawer
                         container={container}
                         variant="temporary"
-                        open={props.isOpen}
+                        open={isOpen}
                         onClose={handleDrawerToggle}
                         classes={{
                             paper: classes.drawerPaper,

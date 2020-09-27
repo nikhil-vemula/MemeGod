@@ -1,11 +1,9 @@
 import { render } from '@testing-library/react'
-import React, { useState } from 'react'
+import React from 'react'
 import SideNav from './SideNav'
 
 test('renders SideNav component', () => {
 
-    let [isOpen, setIsOpen] = useState(false)
-
-    const component = render(<SideNav isOpen={isOpen} setIsOpen={setIsOpen} />);
+    const component = render(<SideNav />);
     expect(component).toBeDefined();
 })
